@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+/* general styling */
 body {
   background-color: black;
   margin: 0;
@@ -10,11 +12,17 @@ img {
   max-width: 100%;
 }
 
+li {
+  list-style: none;
+}
+
+/* grand parent element  */
 .container {
   display: flex;
   justify-content: flex-end;
 }
 
+/* user profile  */
 .profile {
   display: flex;
   flex-direction: column;
@@ -22,13 +30,21 @@ img {
   margin: 0 auto;
 }
 
-.avatar {
+.userSection {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   background-color: #f4f6f8;
   color: #f4f6f8;
-  margin: 3rem;
+  margin: 1rem 0 5rem 0;
+}
+
+/* profile svg/img/icon */
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .icons {
@@ -36,13 +52,18 @@ img {
   height: 3rem;
   border-radius: 20px;
   background-color: #f4f6f8;
-  color: #f4f6f8;
-  margin: 3rem;
+  padding: 5px;
+  align-items: center;
+}
+
+.icons img {
+  width: 100%;
 }
 .cart {
-  background-color: #f4f6f87e;
-  padding: 2px;
+  background-color: #393c3f;
 }
+
+/* main container */
 
 .main {
   background-color: #f4f6f8;
@@ -52,10 +73,10 @@ img {
   display: flex;
   justify-content: space-between;
 }
+
+/* main__first--section */
+
 .main-child-one {
-  /* background-color: chocolate; */
-  display: flex;
-  flex-direction: column;
   flex: 1;
   padding: 2rem;
 }
@@ -63,41 +84,39 @@ img {
 .main__child-one__header {
   display: flex;
   justify-content: space-between;
-  /* background-color: cornflowerblue; */
-  /* flex: 1; */
 }
 
+/* seacth input  */
+
 .input {
-  padding-right: 1rem;
-  width: 20rem;
   height: 3rem;
   background-color: #ffffff;
   border-radius: 15px;
   display: flex;
-  justify-content: space-between;
 }
 
 input {
   border-radius: 15px;
   width: 17rem;
-  height: 2.5rem;
   border: none;
-  /* background-color: #ffffff; */
+}
+
+input:focus {
+  outline: none;
 }
 
 .searchsvg {
   border-radius: 15px;
   padding: 2px;
   margin: 5px;
-  display: inline-block;
-  /* padding: 2rem; */
-  background-color: #bbc1c7;
+  background-color: #f4f6f8;
 }
 
 .searchsvg img {
   width: 2rem;
 }
 
+/* status section  */
 .main__child-one__header-status {
   display: flex;
   justify-content: space-between;
@@ -113,6 +132,7 @@ input {
   color: black;
 }
 
+/* if active then it has this lil border  */
 .active::after {
   content: "";
   height: 3px;
@@ -125,45 +145,78 @@ input {
   right: 0;
 }
 
+/* the progress / proccess chart / bar of the product delivery */
+
+/* main section of proccess bar  */
 .main__child-one__progressChart {
-  background-color: #ffffff;
-  border-radius: 3rem;
-  /* padding: 4rem; */
-  margin-top: 2rem;
-  height: 30rem;
-  /* flex: 1; */
+  margin-top: 1rem;
 }
 
-.stuff {
+.progreesContainer {
+  background-color: #ffffff;
+  border-radius: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* the rows fo the section  */
+.tableRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-left: 1rem;
+  padding: 0.5rem 2rem;
+  text-transform: capitalize;
   font-weight: 700;
 }
 
-.details {
-  color: #bbc1c7;
-  font-weight: 500;
+/* table heading  */
+.tableHead {
+  font-weight: 800;
 }
 
+/* product info  */
+.Product {
+  display: flex;
+  gap: 0 1rem;
+  justify-content: space-between;
+}
+.productHeading {
+  margin-right: 4rem;
+}
+
+.Product img {
+  width: 5rem;
+  border-radius: 10px;
+}
+
+/* light heading  */
+.light {
+  font-weight: 500;
+  color: #bfc4d1;
+}
+
+/* the step progress bar  */
 .line {
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin: 0 8rem;
-  /* gap: 5rem; */
+  margin: 0 7rem;
 }
 
 .line:after {
   content: "";
   height: 3px;
   width: 100%;
-  background: green;
+  background: #00d930;
   position: absolute;
   margin: auto;
   bottom: 13px;
   left: 0;
-  /* right: 0; */
 }
 
-.cirle {
+.circle {
   width: 1.5rem;
   height: 1.5rem;
   background-color: #ffffff;
@@ -172,41 +225,39 @@ input {
   border-radius: 50%;
 }
 
-.cirle p {
-  font-weight: 900;
-  top: 4rem;
-  margin: 2rem 5rem 0 0;
-  text-align: center;
+.circlelactive {
+  border: 3px #00d930 solid;
+  background-color: #00d930;
 }
 
-.circelactive {
-  border: 3px green solid;
-  background-color: green;
-}
-
+/* main__second--section  / product page  */
 .product {
   background-color: #ffffff;
   width: 400px;
   border-radius: 2.5rem;
   padding: 2rem;
+  font-weight: 500;
 }
 
+/* header section of product page  */
 .product .head {
   margin-left: 1rem;
   padding-right: 1rem;
 }
 
+/* the close button of product page  */
 .product .btn {
   font-family: "Poppins", sans-serif;
   padding: 0.5rem 2rem;
   border-radius: 10px;
   border: none;
-  background-color: oldlace;
-  color: red;
+  background-color: #f4f6f8;
+  color: #fe0b0b;
   font-weight: 700;
   font-size: 1rem;
 }
 
+/* detail info about product  */
 .product .information {
   background-color: #f4f6f8;
   display: flex;
@@ -215,26 +266,11 @@ input {
   margin: 1rem;
 }
 
-.productImg {
-  max-width: 200px;
-}
-
 .productImg img {
-  border-radius: 1rem;
+  width: 180px;
 }
 
 .info-product li span {
   color: #bbc1c7;
   font-size: 0.8rem;
-}
-
-.main__child-one__progressChart ul {
-  display: flex;
-  /* gap: 3rem; */
-  justify-content: space-between;
-  margin: 3rem;
-}
-
-li {
-  list-style: none;
 }
